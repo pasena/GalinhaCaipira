@@ -51,17 +51,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\BDGalinhaCaipiraContext.cs" />
+    <Compile Include="EntityConfig\GranjaConfiguration.cs" />
+    <Compile Include="EntityConfig\UsuarioConfiguration.cs" />
+    <Compile Include="Interfaces\IUsuarioRepository.cs" />
+    <Compile Include="Migrations\202011222326187_Usuario.cs" />
+    <Compile Include="Migrations\202011222326187_Usuario.designer.cs">
+      <DependentUpon>202011222326187_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GalinhaCaipira.Entities\GalinhaCaipira.Entities.csproj">
-      <Project>{963e77a4-2055-4062-99c1-1eceb16cabe1}</Project>
-      <Name>GalinhaCaipira.Entities</Name>
-    </ProjectReference>
+    <Compile Include="UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GalinhaCaipira.Entities\GalinhaCaipira.Domain.csproj">
+      <Project>{963e77a4-2055-4062-99c1-1eceb16cabe1}</Project>
+      <Name>GalinhaCaipira.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202011222326187_Usuario.resx">
+      <DependentUpon>202011222326187_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
